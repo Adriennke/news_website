@@ -1,5 +1,7 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, {useState, useEffect} from 'react';
 import {getStory} from '../services/hnApi';
+import '../App.css'
 
 //de-structure the storyId with putting in {}
 export const Story = ({storyId}) => {
@@ -9,11 +11,13 @@ export const Story = ({storyId}) => {
         getStory(storyId).then(data => data && data.url && setStory(data))
     },[]);
 
-    return (
-        <div>
-            <p>I am a story! {storyId}</p>
+    return story && story.url ? (
+        <div className="storyWrapper">
+            <a href={story.url}><p className="yellow">{story.title}</p></a>
+            By: <p>{story.by}</p>
+            Posted: {story.time}
         </div>
-    );
+    ) : null;
 }
 
 
