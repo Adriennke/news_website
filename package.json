@@ -10,7 +10,7 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-scripts": "3.4.1",
-    "homepage": "http://Adriennke.github.io/news_website"
+    "homepage": "https://Adriennke.github.io/news_website"
   },
   "scripts": {
     "start": "react-scripts start",
